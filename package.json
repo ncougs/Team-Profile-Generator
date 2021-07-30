@@ -1,0 +1,26 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "\u001b[2~\u001b[2~\u001b[2~\u001b[2~\u001b[2~\u001b[2~ThisThis is a command line application allowing an employer to generate a webpage that displays their team and a summary of each person",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncougs/Team-Profile-Generator.git"
+  },
+  "author": "Nicholas Cougan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ncougs/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/ncougs/Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
+}
