@@ -14,3 +14,22 @@ function Question(type, name, message, choices) {
     this.choices = choices
 };
 
+const teamName = new Question('input', 'teamName', `What is your teams name?`);
+
+const employeeQuestions = (role) => {
+    return [        
+        new Question('input', 'name', `What is the ${role}'s name ?`),
+        new Question('input', 'id', `What is the ${role}'s ID ?`),
+        new Question('input', 'id', `What is the ${role}'s email ?`)
+    ]; 
+};
+
+console.log(employeeQuestions('manager'));
+
+
+
+
+
+
+
+
