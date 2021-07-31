@@ -17,14 +17,29 @@ function Question(type, name, message, choices) {
 const teamName = new Question('input', 'teamName', `What is your teams name?`);
 
 const employeeQuestions = (role) => {
-    return [        
+    const questionsArray = [        
         new Question('input', 'name', `What is the ${role}'s name ?`),
-        new Question('input', 'id', `What is the ${role}'s ID ?`),
-        new Question('input', 'id', `What is the ${role}'s email ?`)
+        new Question('input', 'id', `What is the ${role}'s employee ID ?`),
+        new Question('input', 'email', `What is the ${role}'s email ?`),
     ]; 
+
+    if (role.toLowerCase() == 'manager') {
+        questionsArray.push(new Question('input', 'officeNumber', `What is the ${role}'s office number ?`))
+    };
+
+    if (role.toLowerCase() == 'engineer') {
+        questionsArray.push(new Question('input', 'github', `What is the ${role}'s github username ?`))
+    };
+
+    if (role.toLowerCase() == 'intern') {
+        questionsArray.push(new Question('input', 'school', `What school does the ${role} got to ?`))
+    };
+
+    return questionsArray;
+
 };
 
-console.log(employeeQuestions('manager'));
+console.log(employeeQuestions('Intern'));
 
 
 
