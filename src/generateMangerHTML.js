@@ -1,3 +1,0 @@
-const generateManagerHTML = (manager) => {
-    
-}
