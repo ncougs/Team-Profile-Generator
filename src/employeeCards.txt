@@ -1,22 +1,4 @@
-<!doctype html>
-    <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-            <title>Nicks Team</title>
-        </head>
-        <body class="min-vh-100">
-            <section class="text-center container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="fw-light p-5">Nicks Team</h1>
-                    </div>
-                </div>
-            </section>
-            <section class="container d-flex justify-content-center flex-wrap my-auto">
-            <!-- Add employee cards below -->
-            
+
                 <div class="card m-2" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Nick</h5>
@@ -40,7 +22,3 @@
                         <li class="list-group-item">GitHub: bobooo</li>
                     </ul>
                 </div>
-
-            </section>
-        </body>
-    </html>

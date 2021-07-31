@@ -3,7 +3,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Employee = require('./lib/employee');
+const generateCard = require('./src/generateCard');
+const generateHTML = require('./src/generateHTML');
 const outputCyanText = (text) => console.log(`\x1b[36m${text}\x1b[0m`);
+
+let teamName;
 
 // Questions to be asked to the user
 
@@ -44,15 +48,33 @@ const employeeQuestions = (role) => {
     } ;
 };
 
+const writeFile = (location, string) => {
+    fs.writeFile(location, string, function (err) {
+        if (err) {
+            return console.error(err);
+        };
+    });
+};
+
+const getFileData = (fileName) => {
+    return fs.readFileSync(fileName).toString()
+  };
+
+
+
 //function to inialize the application
 
 const init = () => {
+
+    //write blank txt file to append employee card HTML
+    writeFile('src/employeeCards.txt', '');
+
     inquirer.prompt(
         [new Question('input', 'teamName', `What is your teams name ?`)]
     )
     .then((answers) => {
         //Answers are saved in JSON. 
-        console.log(answers)
+        teamName = answers.teamName;
         //First ask for managers detail
         askEmployeeQuestion('manager');
     })
@@ -75,17 +97,22 @@ const askEmployeeQuestion = (role) => {
         if (role == 'manager') {
             const teamManager = new Employee.Manager(answers.name, answers.id, answers.email, answers.officeNumber);
             console.log(teamManager);
+            addEmployeeCard(generateCard(teamManager));
         };
 
         if (role == 'engineer') {
             const teamEngineer = new Employee.Engineer(answers.name, answers.id, answers.email, answers.github);
             console.log(teamEngineer);
+            addEmployeeCard(generateCard(teamEngineer));
         };
 
         if (role == 'intern') {
             const teamIntern = new Employee.Intern(answers.name, answers.id, answers.email, answers.school);
             console.log(teamIntern);
+            addEmployeeCard(generateCard(teamIntern));
         };
+
+        
 
         //ask if any more employees should be added
         askAddEmployee();
@@ -98,15 +125,20 @@ const askEmployeeQuestion = (role) => {
 
 const askAddEmployee = () => {
     inquirer.prompt(
-        [new Question('list', 'addEmployee', `Which employee would you like added to your team ?`, ['Engineer', 'Intern', 'No more team members'])]
+        [new Question('list', 'employeeType', `Which employee would you like added to your team ?`, ['Engineer', 'Intern', 'No more team members'])]
     )
     .then((answers) => {
         //Answers are saved in JSON. 
-        if(answers.addEmployee != 'No more team members') {
-            askEmployeeQuestion(answers.addEmployee);
+        //IF More employees to add, repeat questions
+        if(answers.employeeType != 'No more team members') {
+            askEmployeeQuestion(answers.employeeType);
         }
+        //IF NO more employees to add, generate HTML
         else {
-            console.log(answers);
+            //This ends the loop of adding more questions
+            const employeeCardsHTML = getFileData('src/employeeCards.txt');
+            const completeHTML = generateHTML(teamName, employeeCardsHTML);
+            writeFile('dist/renderedOutput.html', completeHTML);
         }
     })
     .catch((error) => {
@@ -114,6 +146,19 @@ const askAddEmployee = () => {
         console.error(error);
     });     
 };
+
+//Add all employee cards to txt file before moving to HTML
+const addEmployeeCard = (card) => {
+    fs.appendFile("src/employeeCards.txt", card, (err) => {
+        if (err) {
+          console.error(err);
+        }
+        else {
+         console.log('card added')
+        }
+      });
+};
+
 
 init();
 
