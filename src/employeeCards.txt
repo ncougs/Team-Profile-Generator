@@ -1,24 +1,36 @@
 
-                <div class="card m-2" style="width: 18rem;">
-                    <div class="card-body">
+                <div class="card m-2 shadow" style="width: 18rem;">
+                    <div class="card-body bg-dark text-white">
                         <h5 class="card-title">Nick</h5>
-                        <h5 class="card-title">Manager</h5>
+                        <h5 class="card-title"><i class="bi bi-piggy-bank"></i> Manager</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ID: </li>
-                        <li class="list-group-item">Email: </li>
-                        <li class="list-group-item">Office Number: </li>
+                    <ul class="llist-group list-group p-4 bg-light">
+                        <li class="list-group-item">ID: 1</li>
+                        <li class="list-group-item">Email: <a href="mailto:ncougan@gmail.com">ncougan@gmail.com</a></li>
+                        <li class="list-group-item">undefined</li>
                     </ul>
                 </div>
 
-                <div class="card m-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Bob</h5>
-                        <h5 class="card-title">Engineer</h5>
+                <div class="card m-2 shadow" style="width: 18rem;">
+                    <div class="card-body bg-dark text-white">
+                        <h5 class="card-title">Franzi</h5>
+                        <h5 class="card-title"><i class="bi bi-braces"></i> Engineer</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ID: 22</li>
-                        <li class="list-group-item">Email: bob@bob.com</li>
-                        <li class="list-group-item">GitHub: bobooo</li>
+                    <ul class="llist-group list-group p-4 bg-light">
+                        <li class="list-group-item">ID: 2</li>
+                        <li class="list-group-item">Email: <a href="mailto:franzi">franzi</a></li>
+                        <li class="list-group-item">undefined</li>
+                    </ul>
+                </div>
+
+                <div class="card m-2 shadow" style="width: 18rem;">
+                    <div class="card-body bg-dark text-white">
+                        <h5 class="card-title">Julian</h5>
+                        <h5 class="card-title"><i class="bi bi-tsunami"></i> Intern</h5>
+                    </div>
+                    <ul class="llist-group list-group p-4 bg-light">
+                        <li class="list-group-item">ID: 3</li>
+                        <li class="list-group-item">Email: <a href="mailto:julian@jcougan.com">julian@jcougan.com</a></li>
+                        <li class="list-group-item">undefined</li>
                     </ul>
                 </div>
