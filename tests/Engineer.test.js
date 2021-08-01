@@ -12,7 +12,7 @@ describe("Engineer", () => {
             expect(harry.name).toEqual('harry');
             expect(harry.id).toEqual('1');
             expect(harry.email).toEqual('harry@potter.com');
-            expect(harry.role).toEqual('Manager');
+            expect(harry.role).toEqual('Engineer');
             expect(harry.github).toEqual('ncougs');
 
         });
