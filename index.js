@@ -96,19 +96,16 @@ const askEmployeeQuestion = (role) => {
         //Answers are saved in JSON. 
         if (role == 'manager') {
             const teamManager = new Employee.Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-            console.log(teamManager);
             addEmployeeCard(generateCard(teamManager));
         };
 
         if (role == 'engineer') {
             const teamEngineer = new Employee.Engineer(answers.name, answers.id, answers.email, answers.github);
-            console.log(teamEngineer);
             addEmployeeCard(generateCard(teamEngineer));
         };
 
         if (role == 'intern') {
             const teamIntern = new Employee.Intern(answers.name, answers.id, answers.email, answers.school);
-            console.log(teamIntern);
             addEmployeeCard(generateCard(teamIntern));
         };
 
@@ -139,6 +136,7 @@ const askAddEmployee = () => {
             const employeeCardsHTML = getFileData('src/employeeCards.txt');
             const completeHTML = generateHTML(teamName, employeeCardsHTML);
             writeFile('dist/renderedOutput.html', completeHTML);
+            outputCyanText(`Congratulations! Your team's webpage has been created within the 'dist' folder.`)
         }
     })
     .catch((error) => {
@@ -152,10 +150,7 @@ const addEmployeeCard = (card) => {
     fs.appendFile("src/employeeCards.txt", card, (err) => {
         if (err) {
           console.error(err);
-        }
-        else {
-         console.log('card added')
-        }
+        };
       });
 };
 
