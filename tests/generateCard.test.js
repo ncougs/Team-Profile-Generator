@@ -39,7 +39,7 @@ describe("generateCard", () => {
                     <ul class="llist-group list-group p-4 bg-light">
                         <li class="list-group-item">ID: ${harry.id}</li>
                         <li class="list-group-item">Email: <a href="mailto:${harry.email}">${harry.email}</a></li>
-                        <li class="list-group-item">GitHub: <a href="https://github.com/${harry.github}">${harry.github}</a></li>
+                        <li class="list-group-item">GitHub: <a href="https://github.com/${harry.github}" target="_blank">${harry.github}</a></li>
                     </ul>
                 </div>
 `);
