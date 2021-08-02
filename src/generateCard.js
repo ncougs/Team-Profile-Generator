@@ -25,7 +25,7 @@ const getUniqueItem = (employee) => {
     };
 
     if (employee.role == 'Engineer') {
-        uniqueItem = `GitHub: <a href="https://github.com/${employee.github}">${employee.github}</a>`
+        uniqueItem = `GitHub: <a href="https://github.com/${employee.github}" target="_blank">${employee.github}</a>`
     };
 
     if (employee.role == 'Intern') {
